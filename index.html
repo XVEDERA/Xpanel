@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Crush Feby 💙</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="nav-float">
+      <div class="logo">Feby 💙</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#memories">Memories</a></li>
+        <li><a href="#reasons">Reasons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="parallax">
+      <div class="hero-content">
+        <h1 class="elegant-title">My Crush Feby 💙</h1>
+        <p class="subtitle">A little page dedicated to someone wonderful.</p>
+        <div class="hero-image-container">
+          <img src="https://i.imgur.com/IFyntRK.jpeg" alt="A romantic themed illustration or photo of Feby">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="parallax">
+      <div class="container">
+        <h2>About Feby</h2>
+        <p>
+          Feby has a charm that’s quiet yet unforgettable. Her smile, gestures, and confidence radiate magic that’s inspiring and comforting. She’s unapologetically herself, making her truly one of a kind.
+        </p>
+      </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="parallax">
+      <div class="container">
+        <h2>Sweet Memories</h2>
+        <div class="gallery">
+          <div class="gallery-item"><img src="https://via.placeholder.com/400x400/BDE0FE/FFFFFF?text=Memory+1" alt="Memory 1"></div>
+          <div class="gallery-item"><img src="https://via.placeholder.com/400x400/A2D2FF/FFFFFF?text=Memory+2" alt="Memory 2"></div>
+          <div class="gallery-item"><img src="https://via.placeholder.com/400x400/BDE0FE/FFFFFF?text=Memory+3" alt="Memory 3"></div>
+          <div class="gallery-item"><img src="https://via.placeholder.com/400x400/A2D2FF/FFFFFF?text=Memory+4" alt="Memory 4"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section id="reasons" class="parallax">
+      <div class="container">
+        <h2>Why I Like Feby</h2>
+        <ul class="reasons-list">
+          <li>Her smile lights up the room and my day.</li>
+          <li>She sees the world from a fascinating perspective.</li>
+          <li>Her kindness is effortless and genuine.</li>
+          <li>She listens and makes everyone feel heard.</li>
+          <li>Her simple presence is soothing and warm.</li>
+          <li>She’s unapologetically herself, and that’s captivating.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with 💙 for the one and only Feby.</p>
+    <p>&copy; 2025 | CREATED BY ARYA</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Scroll Animations
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+
+    // Parallax Effect
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.parallax').forEach(el => {
+        const speed = 0.5;
+        el.style.backgroundPositionY = `${window.scrollY * speed}px`;
+      });
+    });
+  </script>
+
+  <!-- Styles -->
+  <style>
+  :root {
+    --primary-color: #a0c4ff;
+    --secondary-color: #f0f8ff;
+    --background-color: #ffffff;
+    --text-color: #333;
+    --heading-font: 'Great Vibes', cursive;
+    --body-font: 'Montserrat', sans-serif;
+    --nav-height: 70px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body-font); background: var(--background-color); color: var(--text-color); line-height:1.6; }
+
+  header { position:fixed; width:100%; top:0; z-index:1000; }
+  .nav-float { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:15px 40px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-radius:12px; box-shadow:0 5px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+  .nav-float:hover { transform: translateY(-3px); }
+  .logo { font-size:1.6rem; font-weight:700; color: var(--primary-color); }
+  .nav-links { list-style:none; display:flex; }
+  .nav-links li { margin-left:30px; transition: transform 0.3s ease; }
+  .nav-links li:hover { transform: scale(1.15); }
+  .nav-links a { text-decoration:none; color: var(--text-color); font-weight:500; transition: color 0.3s ease; }
+  .nav-links a:hover { color:#005bb5; }
+
+  section { padding:100px 0; opacity:0; transform:translateY(40px); transition: all 0.8s ease-out; background-attachment: fixed; background-size: cover; background-repeat: no-repeat; }
+  section.show { opacity:1; transform:translateY(0); }
+
+  #home { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; background: linear-gradient(135deg,#cfd9df,#e2ebf0); }
+  .hero-content { max-width:800px; }
+  .elegant-title { font-family: var(--heading-font); font-size:6rem; color:#005bb5; text-shadow:2px 2px 8px rgba(0,0,0,0.1); margin-bottom:10px; line-height:1.1; }
+  .subtitle { font-size:1.2rem; color:#555; margin-bottom:40px; border-right:2px solid #555; white-space:nowrap; overflow:hidden; width:0; animation:typing 4s steps(40,end) forwards, blink 0.8s infinite; }
+  @keyframes typing { from{width:0} to{width:100%} } 
+  @keyframes blink { 50%{border-color:transparent} }
+
+  .hero-image-container { border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,0.2); transition: transform 0.5s ease; margin-top:25px; }
+  .hero-image-container img { width:100%; height:auto; display:block; }
+  .hero-image-container:hover { transform:translateY(-15px); }
+
+  .container { max-width:960px; margin:auto; padding:0 20px; }
+  h2 { font-size:2.5rem; color:var(--primary-color); text-align:center; margin-bottom:40px; font-weight:500; }
+
+  #about p { text-align:center; font-size:1.1rem; max-width:700px; margin:auto; line-height:1.8; }
+
+  #memories { background:linear-gradient(135deg,#f0f8ff,#e2ebf0); }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+  .gallery-item img { width:100%; object-fit:cover; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); transition: transform 0.4s ease, box-shadow 0.4s ease; opacity:0; transform:translateY(30px); animation:fadeIn 1s forwards; }
+  .gallery-item img:hover { transform: scale(1.08) rotate(-1deg); box-shadow:0 12px 35px rgba(0,0,0,0.25); }
+
+  @keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
+
+  .reasons-list { list-style:none; max-width:600px; margin:auto; }
+  .reasons-list li { background:var(--secondary-color); padding:18px 25px; margin-bottom:12px; border-radius:10px; border-left:5px solid var(--primary-color); transition: transform 0
